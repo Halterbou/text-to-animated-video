@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Animated Video</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Text to Animated Video</h1>
+            <p>Convierte tu texto en videos animados</p>
+        </header>
+
+        <div class="content">
+            <!-- Panel de control -->
+            <div class="control-panel">
+                <h2>Controles</h2>
+                
+                <div class="form-group">
+                    <label for="textInput">Tu texto:</label>
+                    <textarea id="textInput" placeholder="Escribe aquí el texto que quieres animar..." rows="6">Hola Mundo</textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fontColor">Color del texto:</label>
+                        <input type="color" id="fontColor" value="#FFFFFF">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bgColor">Color de fondo:</label>
+                        <input type="color" id="bgColor" value="#1a1a2e">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fontSize">Tamaño de letra:</label>
+                        <input type="range" id="fontSize" min="20" max="120" value="60">
+                        <span id="fontSizeValue">60px</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="animationSpeed">Velocidad:</label>
+                        <input type="range" id="animationSpeed" min="0.5" max="3" step="0.5" value="1">
+                        <span id="animationSpeedValue">Normal</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="animationStyle">Estilo de animación:</label>
+                    <select id="animationStyle">
+                        <option value="fadeIn">Aparecer (Fade In)</option>
+                        <option value="slideLeft">Deslizar desde izquierda</option>
+                        <option value="slideRight">Deslizar desde derecha</option>
+                        <option value="slideDown">Deslizar desde arriba</option>
+                        <option value="bounce">Rebotar</option>
+                        <option value="rotate">Girar</option>
+                        <option value="pulse">Pulso</option>
+                        <option value="typeWriter">Máquina de escribir</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="confetti">
+                        <input type="checkbox" id="confetti" checked>
+                        Agregar confeti
+                    </label>
+                </div>
+
+                <button id="playBtn" class="btn btn-play">▶ Reproducir</button>
+                <button id="downloadBtn" class="btn btn-download">⬇ Descargar Video</button>
+            </div>
+
+            <!-- Pantalla de previsualización -->
+            <div class="preview-section">
+                <h2>Previsualización</h2>
+                <div id="previewContainer" class="preview-container">
+                    <canvas id="animationCanvas"></canvas>
+                    <div id="confettiContainer" class="confetti-container"></div>
+                </div>
+                <p class="info-text">Tu animación aparecerá aquí</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
